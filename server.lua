@@ -120,7 +120,7 @@ end
 
 AddEventHandler("vRP:playerSpawn",function(user_id, source, first_spawn)
 	if first_spawn then
-		Citizen.SetTimeout(5000,function()
+		Citizen.SetTimeout(12500,function()
 			MySQL.query("vRP/select_user_costumization",{user_id = user_id},function(result,affected)
 				if #result == 0 then
 					MySQL.execute("vRP/insert_user_costumization",{user_id = user_id})
